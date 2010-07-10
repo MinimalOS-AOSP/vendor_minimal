@@ -35,6 +35,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Init.d script support
+PRODUCT_COPY_FILES += \
+    vendor/minimal/prebuilt/bin/sysinit:system/bin/sysinit
+
 # Backuptool Support
 PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/addon.d/50-minimal.sh:system/addon.d/50-minimal.sh \
