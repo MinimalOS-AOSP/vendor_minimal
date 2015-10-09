@@ -48,3 +48,6 @@ PRODUCT_COPY_FILES +=  \
 
 # video files
 $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
+
+# Include common fingerprints
+include vendor/minimal/products/common_fingerprints.mk
