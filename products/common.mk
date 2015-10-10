@@ -22,6 +22,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/minimal/overlay/common
 
 #Extra Packages
 PRODUCT_PACKAGES += \
+    Busybox \
     Launcher3 \
     WallpaperPicker \
     Stk
