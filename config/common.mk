@@ -3,6 +3,7 @@ PRODUCT_NAME := minimal
 PRODUCT_BRAND := minimal
 PRODUCT_DEVICE := generic
 
+#AOSP Fixes
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -10,7 +11,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
-    ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.mobiledata=false
     ro.com.android.dataroaming=false
     ro.setupwizard.network_required=false \
@@ -40,15 +40,11 @@ PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/addon.d/50-minimal.sh:system/addon.d/50-minimal.sh \
     vendor/minimal/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/minimal/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    
+
 # Blobs necessary for media effects
-# media effects
 PRODUCT_COPY_FILES +=  \
     vendor/minimal/prebuilt/common/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     vendor/minimal/prebuilt/common/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
-
-# video files
-$(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Include common fingerprints
 include vendor/minimal/products/common_fingerprints.mk
