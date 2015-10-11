@@ -2,7 +2,7 @@
 $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/minimal/products/common.mk)
+$(call inherit-product, vendor/minimal/config/common.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := minimal_hammerhead

@@ -51,4 +51,4 @@ PRODUCT_COPY_FILES +=  \
     vendor/minimal/prebuilt/common/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 
 # Include common fingerprints
-include vendor/minimal/products/common_fingerprints.mk
+include vendor/minimal/config/common_fingerprints.mk
