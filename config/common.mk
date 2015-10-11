@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
 
 # Init.d script support
 PRODUCT_COPY_FILES += \
-    vendor/minimal/prebuilt/bin/sysinit:system/bin/sysinit
+    vendor/minimal/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Backuptool Support
 PRODUCT_COPY_FILES += \
