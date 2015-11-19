@@ -35,6 +35,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# APN list
+PRODUCT_COPY_FILES += \
+    vendor/minimal/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/bin/sysinit:system/bin/sysinit
