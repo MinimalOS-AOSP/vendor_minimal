@@ -27,9 +27,14 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     Stk
 
-# Latin IME lib
+# Proprietary latinime libs needed for Keyboard swyping
+ifneq ($(filter minimal_hammerhead minimal_mako minimal_shamu,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/system/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else
+PRODUCT_COPY_FILES += \
+    vendor/minimal/prebuilt/common/system/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -49,10 +54,12 @@ PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/minimal/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
 
-# Blobs necessary for media effects
+# Include common fingerprints
+include vendor/minimal/config/common_fingerprints.mk
+
+# Camera Effects for devices without a vendor partition
+ifneq ($(filter minimal_hammerhead minimal_mako minimal_shamu,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES +=  \
     vendor/minimal/prebuilt/common/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     vendor/minimal/prebuilt/common/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
-
-# Include common fingerprints
-include vendor/minimal/config/common_fingerprints.mk
+endif
