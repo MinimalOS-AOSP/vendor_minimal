@@ -6,30 +6,27 @@
 export C=/tmp/backupdir
 export S=/system
 
+# Scripts in /system/addon.d expect to find backuptool.functions in /tmp
+cp -f /tmp/install/bin/backuptool.functions /tmp
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
-  if [ -d /system/addon.d/ ]; then
-    mkdir -p /tmp/addon.d/
-    cp -a /system/addon.d/* /tmp/addon.d/
-    chmod 755 /tmp/addon.d/*.sh
-  fi
+  mkdir -p /tmp/addon.d/
+  cp -a /system/addon.d/* /tmp/addon.d/
+  chmod 755 /tmp/addon.d/*.sh
 }
 
-# Restore /system/addon.d from /tmp/addon.d
+# Restore /system/addon.d in /tmp/addon.d
 restore_addon_d() {
-  if [ -d /tmp/addon.d/ ]; then
-    cp -a /tmp/addon.d/* /system/addon.d/
-    rm -rf /tmp/addon.d/
-  fi
+  cp -a /tmp/addon.d/* /system/addon.d/
+  rm -rf /tmp/addon.d/
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
-if [ -d /tmp/addon.d/ ]; then
-  for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
-    $script $1
-  done
-fi
+for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
+  $script $1
+done
 }
 
 case "$1" in

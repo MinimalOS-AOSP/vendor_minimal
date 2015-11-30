@@ -48,11 +48,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# Backuptool Support
+# Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/addon.d/50-minimal.sh:system/addon.d/50-minimal.sh \
+    vendor/minimal/prebuilt/common/addon.d/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/minimal/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/minimal/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/minimal/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Include common fingerprints
 include vendor/minimal/config/common_fingerprints.mk
@@ -63,3 +65,8 @@ PRODUCT_COPY_FILES +=  \
     vendor/minimal/prebuilt/common/vendor/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     vendor/minimal/prebuilt/common/vendor/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 endif
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/minimal/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/minimal/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon

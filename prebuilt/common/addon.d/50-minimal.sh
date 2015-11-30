@@ -1,6 +1,6 @@
 #!/sbin/sh
-#
-# /system/addon.d/50-minimal.sh
+# 
+# /system/addon.d/50-chroma.sh
 # During a upgrade, this script backs up /system/etc/hosts,
 # /system is formatted and reinstalled, then the file is restored.
 #
