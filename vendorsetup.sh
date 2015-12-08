@@ -1,4 +1,4 @@
-add_lunch_combo minimal_angler-user
-add_lunch_combo minimal_hammerhead-user
-add_lunch_combo minimal_mako-user
-add_lunch_combo minimal_shamu-user
+add_lunch_combo minimal_angler-userdebug
+add_lunch_combo minimal_hammerhead-userdebug
+add_lunch_combo minimal_mako-userdebug
+add_lunch_combo minimal_shamu-userdebug
