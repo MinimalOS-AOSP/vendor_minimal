@@ -71,6 +71,8 @@ PRODUCT_COPY_FILES += \
     vendor/minimal/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/minimal/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 	
-# Bootanimation
- PRODUCT_COPY_FILES += \
-         vendor/minimal/prebuilt/$(TARGET_DEVICE)/bootanimation.zip:system/media/bootanimation.zip	
+# Bootanimation (add if it exists)
+ifneq ($(wildcard vendor/minimal/prebuilt/bootanimation/$(TARGET_DEVICE).zip),)
+PRODUCT_COPY_FILES += \
+        vendor/vendor/prebuilt/bootanimation/$(TARGET_DEVICE).zip:system/media/bootanimation.zip
+endif
