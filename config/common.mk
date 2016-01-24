@@ -74,5 +74,5 @@ PRODUCT_COPY_FILES += \
 # Bootanimation (add if it exists)
 ifneq ($(wildcard vendor/minimal/prebuilt/bootanimation/$(TARGET_DEVICE).zip),)
 PRODUCT_COPY_FILES += \
-        vendor/vendor/prebuilt/bootanimation/$(TARGET_DEVICE).zip:system/media/bootanimation.zip
+        vendor/minimal/prebuilt/bootanimation/$(TARGET_DEVICE).zip:system/media/bootanimation.zip
 endif
