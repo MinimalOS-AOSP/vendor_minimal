@@ -6,7 +6,7 @@ $(call inherit-product, vendor/minimal/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lettuce
-PRODUCT_NAME := vanir_lettuce
+PRODUCT_NAME := minimal_lettuce
 PRODUCT_BRAND := YU
 PRODUCT_MANUFACTURER := YU
 PRODUCT_MODEL := YU5010
